@@ -1,9 +1,7 @@
 import { useState } from "react";
-import "../Components/Signup.css";
-// import image from "../image.jpg";
-// import { useNavigate } from "react-router-dom";
+import "../Components/signup.css";
+import Images from "../Images/image.jpg";
 import { Link } from "react-router-dom";
-// import SignIn from './Signin';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +11,8 @@ const SignUp = () => {
     password: "",
   });
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [message, setMessage] = useState(""); // State for success message
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -20,6 +20,7 @@ const SignUp = () => {
       [name]: value,
     });
   };
+
   const handleCheckboxChange = () => {
     setAgreedToTerms(!agreedToTerms);
   };
@@ -27,18 +28,25 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (agreedToTerms) {
+      // Store user credentials in localStorage
+      localStorage.setItem("user", JSON.stringify(formData));
+      setMessage("Sign up successful! You can now log in.");
       console.log("Form submitted:", formData);
+      // Optionally, reset the form after submission
+      setFormData({ name: "", username: "", email: "", password: "" });
+      setAgreedToTerms(false);
     } else {
       alert("You must agree to the terms and conditions.");
     }
   };
+
   return (
     <div>
       <div id="base">
         <div id="option">
           <div id="header">
-            <h1>Sign in to KWARA RIDE</h1>
-            {/* <img className="image" src={image} alt="" /> */}
+            <h1>Sign Up to KWARA RIDE</h1>
+            <img className="image" src={Images} alt="" />
           </div>
 
           <form onSubmit={handleSubmit}>
@@ -93,7 +101,7 @@ const SignUp = () => {
                   Password <br />
                   <input
                     id="pass"
-                    placeholder="    6+ character"
+                    placeholder="    6+ characters"
                     type="password"
                     name="password"
                     minLength="6"
@@ -115,7 +123,7 @@ const SignUp = () => {
                   required
                 />
                 <p id="agree">
-                  i agree with KWARA RIDE terms, privacy <br />
+                  I agree with KWARA RIDE terms, privacy <br />
                   policy, and default notification setting
                 </p>
               </label>
@@ -124,10 +132,14 @@ const SignUp = () => {
               Create account
             </button>
           </form>
+
+          {/* Display success message */}
+          {message && <p style={{ color: "green" }}>{message}</p>}
+
           <p id="note">
-            Already have an account? <a href="./signin"></a>
+            Already have an account?{" "}
             <Link to="/signin" rel="">
-              log in
+              Log in
             </Link>
           </p>
         </div>
