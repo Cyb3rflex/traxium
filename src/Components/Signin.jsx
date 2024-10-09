@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import image from '../image.jpg'
 import './signin.css'
-import photo from '../photo.jpg'
+import "../Images/photo.jpg"
 import SignUp from "./signup";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
