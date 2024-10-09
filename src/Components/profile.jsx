@@ -1,37 +1,15 @@
-// import React from 'react'
+import React from 'react'
 
-// function profile() {
-//   return (
-//     <div>profile</div>
-//   )
-// }
-
-// export default profile;
-
-import logo from './logo.svg';
-// import './App.css';
-// import MyComponent from './image'
-import { BrowserRouter,Route,Routes} from 'react-router-dom';
-import SignUp from '../src/component/signup';
-import Signin from './component/signin';
-
-function App() {
-return (
-  <BrowserRouter>
-  <div>
-    <Routes>
-      {/* hello */}
-    {/* <MyComponent/> */}
-    <Route path='/' element={<SignUp/>}/>
-    <Route path='/signup' element={<SignUp/>}/>
-    <Route path='/signin' element={<Signin/>}/>
-    
-    </Routes>
-    {/* <SignUp/> */}
-    {/* <Signin/> */}
-  </div>
-  </BrowserRouter>
-)
+function profile() {
+  return (
+    <div>
+        <div>
+            <h1>Profile</h1>
+            <p>i am a boy</p>
+        </div>
+    </div>
+   
+  )
 }
 
-export default App;
+export default profile;

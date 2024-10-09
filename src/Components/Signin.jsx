@@ -62,7 +62,7 @@ const SignIn = () => {
           {message && <p>{message}</p>}
 
           <button id="type" type="submit">sign in</button>
-            <p id="have">Don't have an account? <a href="./signup"></a>
+            <p id="have">Do not have an account?
             <Link to='/signup' rel="">sign up</Link>
             </p>
         </div>
