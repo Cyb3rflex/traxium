@@ -4,7 +4,7 @@ import './signin.css'
 import "../Images/photo.jpg"
 import SignUp from "./signup";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
 
 
 const SignIn = () => {
