@@ -1,27 +1,20 @@
-
 // import './App.css';
-// import MyComponent from './image'
-import { BrowserRouter,Route,Routes} from 'react-router-dom';
-import SignUp from '../src/component/signup';
-import Signin from './component/signin';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import SignUp from "./Components/signup";
+import Signin from "./Components/Signin";
 
 function App() {
-return (
-  <BrowserRouter>
-  <div>
-    <Routes>
-      {/* hello */}
-    {/* <MyComponent/> */}
-    <Route path='/' element={<SignUp/>}/>
-    <Route path='/signup' element={<SignUp/>}/>
-    <Route path='/signin' element={<Signin/>}/>
-    
-    </Routes>
-    {/* <SignUp/> */}
-    {/* <Signin/> */}
-  </div>
-  </BrowserRouter>
-)
+  return (
+    <div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignUp />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<Signin />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
