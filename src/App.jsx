@@ -1,20 +1,8 @@
-// import './App.css';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SignUp from "./Components/signup";
-import Signin from "./Components/Signin";
+// import React from 'react'
+import Layout from "./Components/Layout/Layout";
 
-function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SignUp />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<Signin />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
-}
+const App = () => {
+  return <Layout />;
+};
 
 export default App;

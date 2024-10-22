@@ -1,15 +1,15 @@
 import { useState } from "react";
-// import "../image.jpg";
 import "./signin.css";
-import Images from "../Images/image.jpg";
-import photo from "../Components/photo.jpg";
-// import SignUp from "./signup";
-import { Link } from "react-router-dom";
+import Images from "../Images/image.jpg"; // Ensure the path is correct
+import photo from "../Components/photo.jpg"; // Ensure the path is correct
+import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
+// import Aheadcr from "./Aheadcr";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate(); // Hook for redirection
 
   const handleSignIn = (e) => {
     e.preventDefault();
@@ -21,6 +21,7 @@ const SignIn = () => {
       // Check if email and password match the stored data
       if (email === user.email && password === user.password) {
         setMessage("Sign in successful!");
+        navigate("/aheadcr"); // Redirect to Aheadcr on success
       } else {
         setMessage("Invalid email or password");
       }
@@ -33,11 +34,11 @@ const SignIn = () => {
     <div className="option">
       <div id="header">
         <h1 id="head">Kindly Log In</h1>
-        <img className="image" src={Images} alt="" />
+        <img className="image" src={Images} alt="Sign In" />
       </div>
 
       <button id="but">
-        <img src={photo} alt="" />
+        <img src={photo} alt="Google Sign In" />
         Sign in with Google
       </button>
       <br />
@@ -68,9 +69,9 @@ const SignIn = () => {
           />
         </div>
         <br />
-        {/* Submit button is now inside the form */}
+        {/* Submit button */}
         <button id="type" type="submit">
-          Sign in
+          Submit
         </button>
       </form>
 
@@ -78,10 +79,7 @@ const SignIn = () => {
       {message && <p>{message}</p>}
 
       <p id="have">
-        Do not have an account?{" "}
-        <Link to="/signup" rel="">
-          Sign up
-        </Link>
+        Do not have an account? <Link to="/signup">Sign up</Link>
       </p>
     </div>
   );
