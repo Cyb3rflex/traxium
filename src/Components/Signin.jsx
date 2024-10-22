@@ -1,9 +1,14 @@
 import { useState } from "react";
 import "./signin.css";
-import Images from "../Images/image.jpg"; // Ensure the path is correct
-import photo from "../Components/photo.jpg"; // Ensure the path is correct
-import { Link, useNavigate } from "react-router-dom"; // Added useNavigate
-// import Aheadcr from "./Aheadcr";
+import Images from "../Images/image.jpg";
+import photo from "../Components/photo.jpg";
+// import SignUp from "./signup";
+import { Link } from "react-router-dom";
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> a916f7dfa6c961e3d138a571c73e3d639d53048f
 
 const SignIn = () => {
   const [email, setEmail] = useState("");

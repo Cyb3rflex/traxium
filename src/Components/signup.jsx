@@ -1,6 +1,7 @@
 import { useState } from "react";
-import "../Components/signup.css";
-import Images from "../Images/image.jpg";
+import "../component/signup.css";
+import image from "../Images/image.jpg";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const SignUp = () => {
